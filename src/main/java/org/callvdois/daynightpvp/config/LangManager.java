@@ -74,6 +74,14 @@ public class LangManager {
         return formatMessage("feedback-update-found");
     }
 
+    public String getFeedbackUpdateFoundCurrentVersion() {
+        return formatMessage("feedback-update-found-current-version");
+    }
+
+    public String getFeedbackUpdateFoundNewVersion() {
+        return formatMessage("feedback-update-found-new-version");
+    }
+
     public String getFeedbackReloadPlugin() {
         return formatMessage("feedback-reload-plugin");
     }

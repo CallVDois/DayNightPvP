@@ -16,6 +16,8 @@ notify-pvp-disabled: "&7В данный момент вы не можете на
 
 # Обратная связь
 feedback-update-found: "&9&lDayNightPvP &8-> &7Обновление найдено!"
+feedback-update-found-current-version: "&7Current version: &c{0}"
+feedback-update-found-new-version: "&7New version: &b{0}"
 feedback-reload-plugin: "&a&lУспех! &7Файлы конфигурации перезагружены!"
 feedback-select-lang: "&a&lУспех! &7Языковой файл изменен на \"{0}\""
 feedback-lose-money: "&e&lПредупреждение! &7Вы погибли от &b{0} &7и потеряли &c${1}"

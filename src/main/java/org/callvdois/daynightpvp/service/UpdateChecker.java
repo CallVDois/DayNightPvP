@@ -32,6 +32,8 @@ public class UpdateChecker {
                 link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.spigotmc.org/resources/daynightpvp-dynamic-pvp-for-day-night.102250/updates"));
 
                 event.getPlayer().sendMessage(langManager.getFeedbackUpdateFound());
+                event.getPlayer().sendMessage(langManager.getFeedbackUpdateFoundCurrentVersion().replace("{0}", currentVersion));
+                event.getPlayer().sendMessage(langManager.getFeedbackUpdateFoundNewVersion().replace("{0}", latestVersion));
                 event.getPlayer().spigot().sendMessage(link);
             }
         } catch (IOException ex) {

@@ -1,5 +1,5 @@
 # Esta es la versión del archivo, NO MODIFICAR.
-version: 12
+version: 13
 
 # Estados
 state-enabled: "&aActivado"
@@ -16,6 +16,8 @@ notify-pvp-disabled: "&7No puedes participar en combate en este momento, ¡es de
 
 # Retroalimentación
 feedback-update-found: "&9&lDayNightPvP &8-> &7¡Actualización encontrada!"
+feedback-update-found-current-version: "&7Current version: &c{0}"
+feedback-update-found-new-version: "&7New version: &b{0}"
 feedback-reload-plugin: "&a&l¡Éxito! &7Archivos de configuración recargados!"
 feedback-select-lang: "&a&l¡Éxito! &7Archivo de idioma cambiado a \"{0}\""
 feedback-lose-money: "&e&l¡Advertencia! &7Has muerto por &b{0} &7y perdiste &c${1}"
