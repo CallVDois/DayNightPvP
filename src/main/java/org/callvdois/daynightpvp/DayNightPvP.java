@@ -2,7 +2,7 @@ package org.callvdois.daynightpvp;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
-import org.callvdois.daynightpvp.commands.CommandManager;
+import org.callvdois.daynightpvp.commands.CommandHandler;
 import org.callvdois.daynightpvp.config.FilesManager;
 import org.callvdois.daynightpvp.events.EventsManager;
 import org.callvdois.daynightpvp.metrics.MetricsManager;
@@ -24,7 +24,7 @@ public class DayNightPvP extends JavaPlugin {
     public static List<BukkitTask> serviceTasks = new ArrayList<>();
     private static DayNightPvP instance;
     private final FilesManager filesManager;
-    private final CommandManager commandManager;
+    private final CommandHandler commandHandler;
     private final EventsManager eventsManager;
     private final PlaceholderManager placeholderManager;
     private final WorldGuardManager worldGuardManager;
@@ -35,7 +35,7 @@ public class DayNightPvP extends JavaPlugin {
         instance = this;
 
         filesManager = new FilesManager();
-        commandManager = new CommandManager();
+        commandHandler = new CommandHandler();
         eventsManager = new EventsManager();
         placeholderManager = new PlaceholderManager();
         worldGuardManager = new WorldGuardManager();
@@ -72,7 +72,7 @@ public class DayNightPvP extends JavaPlugin {
 
         filesManager.createFiles();
 
-        commandManager.register();
+        commandHandler.register();
 
         eventsManager.register();
 

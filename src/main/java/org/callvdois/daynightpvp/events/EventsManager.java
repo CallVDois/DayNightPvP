@@ -20,15 +20,10 @@ public class EventsManager {
         registerJoinEvent();
         registerEntityEvent();
         registerDeathEvent();
-        registerInventoryEvent();
     }
 
     public void unregiser() {
         HandlerList.unregisterAll(DayNightPvP.getInstance());
-    }
-
-    private void registerInventoryEvent() {
-        pluginManager.registerEvents(new InventoryEvent(), DayNightPvP.getInstance());
     }
 
     private void registerJoinEvent() {
