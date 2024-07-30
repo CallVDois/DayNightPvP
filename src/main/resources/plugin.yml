@@ -22,6 +22,9 @@ permissions:
   dnp.admin:
     description: Ensures access to all DNP commands.
     default: op
-  dnp.bypasspvp:
+  dnp.bypass:
     description: Allows the user to engage in combat even during the day.
+    default: false
+  dnp.immune:
+    description: Allows the user to become immune to PvP.
     default: false

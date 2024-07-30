@@ -1,5 +1,5 @@
 # This is the version of the file, DO NOT MODIFY.
-version: 13
+version: 14
 
 # Notifications
 notify-day-chat: "&a&lDia! PvP Desativado!"
@@ -9,6 +9,8 @@ notify-day-subtitle: "&a&lPvP Desativado!"
 notify-night-title: "&c&lNoite!"
 notify-night-subtitle: "&c&lPvP Ativado!"
 notify-pvp-disabled: "&7Você não pode entrar em combate no momento, está de dia!"
+notify-player-immune: "&7Este jogador é imune ao PvP!"
+notify-self-immune: "&7Você é imune ao PvP, não pode entrar em combate"
 
 # Feedback
 feedback-update-available: "&9&lDayNightPvP &8-> &7Atualização disponível!!"
@@ -18,7 +20,7 @@ feedback-update-check-failed: "&9&lDayNightPvP &8-> &7Não foi possível verific
 feedback-reload-plugin: "&a&lSucesso! &7Plugin recarregado!"
 feedback-lose-money: "&e&lAviso! &7Você morreu para &b{0} &7e perdeu &c${1}"
 feedback-win-money: "&e&lAviso! &7Você matou &b{0} &7e ganhou &a${1}"
-feedback-non-existent-command: "&c&lErro! &7Este comando não existe!"
+feedback-non-existent-command: "&c&lErro! &7Comando não encontrado!"
 feedback-error: "&c&lERRO!"
 
 # Actions

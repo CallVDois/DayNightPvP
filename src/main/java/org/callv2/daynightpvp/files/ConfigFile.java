@@ -30,9 +30,20 @@ public class ConfigFile {
     private void verifyFileVersion() {
         int latestFileVersion = 17;
         if (latestFileVersion != getVersion()) {
+            File outdatedFile = new File(DayNightPvP.getInstance().getDataFolder(), "config.yml.old");
+            if (outdatedFile.exists()) {
+                outdatedFile.delete();
+            }
+            boolean success = fileLocation.renameTo(outdatedFile);
+            if (success) {
+                String fileRenamed = "[DayNightPvP] The \"config.yml\" file was outdated and has been renamed to \"config.yml.old\".";
+                ConsoleUtils.sendWarningMessage(fileRenamed);
+            } else {
+                String fileRenameFailed = "[DayNightPvP] Failed to rename the \"config.yml\" file.";
+                ConsoleUtils.sendWarningMessage(fileRenameFailed);
+            }
+
             resetFile();
-            String fileOutdated = "[DayNightPvP] The \"config.yml\" file was an outdated version. it has been replaced by the new version.";
-            ConsoleUtils.sendWarningMessage(fileOutdated);
             fileContent = YamlConfiguration.loadConfiguration(fileLocation);
         }
     }

@@ -22,6 +22,8 @@ public class DamageListener implements Listener {
     private final GriefPreventionHandler griefPreventionHandler;
     private final boolean notifyPlayersChatHitAnotherPlayerDuringDay;
     private final String notifyPvpDisabled;
+    private final String notifyPlayerImmune;
+    private final String notifySelfImmune;
     private final boolean griefPreventionPvpInLandEnabled;
 
     public DamageListener(ConfigFile configFile, LangFile langFile) {
@@ -29,6 +31,8 @@ public class DamageListener implements Listener {
 
         this.notifyPlayersChatHitAnotherPlayerDuringDay = configFile.getNotifyPlayersChatHitAnotherPlayerDuringTheDay();
         this.notifyPvpDisabled = langFile.getNotifyPvpDisabled();
+        this.notifyPlayerImmune = langFile.getNotifyPlayerImmune();
+        this.notifySelfImmune = langFile.getNotifySelfImmune();
         this.griefPreventionPvpInLandEnabled = configFile.getGriefPreventionPvpInLandEnabled();
     }
 
@@ -47,9 +51,6 @@ public class DamageListener implements Listener {
 
         if (checkHooks(damagedPlayer, damager)) {
             event.setCancelled(true);
-            if (notifyPlayersChatHitAnotherPlayerDuringDay) {
-                damager.sendMessage(notifyPvpDisabled);
-            }
         }
     }
 
@@ -69,9 +70,6 @@ public class DamageListener implements Listener {
 
         if (checkHooks(damagedPlayer, damager)) {
             event.setCancelled(true);
-            if (notifyPlayersChatHitAnotherPlayerDuringDay) {
-                damager.sendMessage(notifyPvpDisabled);
-            }
         }
 
     }
@@ -86,9 +84,6 @@ public class DamageListener implements Listener {
                         if (event.getAffectedEntities().contains(damagedPlayer) && damagedPlayer != damager) {
                             if (checkHooks(damagedPlayer, damager)) {
                                 event.setIntensity(damagedPlayer, 0.0);
-                                if (notifyPlayersChatHitAnotherPlayerDuringDay) {
-                                    damager.sendMessage(notifyPvpDisabled);
-                                }
                             }
                         }
                     }
@@ -106,16 +101,34 @@ public class DamageListener implements Listener {
     }
 
     private boolean checkHooks(Player damagedPlayer, Player damager) {
-        if (damager.hasPermission("dnp.bypasspvp")) {
+        if (damager.hasPermission("dnp.bypass")) {
             return false;
+        }
+        if (damager.hasPermission("dnp.immune")) {
+            damager.sendMessage(notifySelfImmune);
+            return true;
+        }
+        if (damagedPlayer.hasPermission("dnp.immune")) {
+            damager.sendMessage(notifyPlayerImmune);
+            return true;
         }
         if (DayNightPvP.worldGuardIsPresent && AllowDaytimePvpFlag.checkStateOnPosition(damagedPlayer) && AllowDaytimePvpFlag.checkStateOnPosition(damager)) {
             return false;
         }
-        if (DayNightPvP.griefIsPresent && !griefPreventionPvpInLandEnabled && griefPreventionHandler.verify(damagedPlayer, damager)) {
+        if (WorldUtils.checkPlayerIsInWorld(damagedPlayer))
+        {
+            if (notifyPlayersChatHitAnotherPlayerDuringDay) {
+                damager.sendMessage(notifyPvpDisabled);
+            }
             return true;
         }
-        return WorldUtils.checkPlayerIsInWorld(damagedPlayer);
+        if (DayNightPvP.griefIsPresent && !griefPreventionPvpInLandEnabled && griefPreventionHandler.verify(damagedPlayer, damager)) {
+            if (notifyPlayersChatHitAnotherPlayerDuringDay) {
+                damager.sendMessage(notifyPvpDisabled);
+            }
+            return true;
+        }
+        return false;
     }
 
 }

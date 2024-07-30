@@ -1,29 +1,31 @@
 # This is the version of the file, DO NOT MODIFY.
-version: 13
+version: 14
 
 # Notifications
-notify-day-chat: "&a&lДень! PvP отключен!"
-notify-night-chat: "&c&lНочь! PvP включен!"
+notify-day-chat: "&a&lДень! PvP Отключен!"
+notify-night-chat: "&c&lНочь! PvP Включен!"
 notify-day-title: "&a&lДень!"
-notify-day-subtitle: "&a&lPvP отключен!"
+notify-day-subtitle: "&a&lPvP Отключен!"
 notify-night-title: "&c&lНочь!"
-notify-night-subtitle: "&c&lPvP включен!"
+notify-night-subtitle: "&c&lPvP Включен!"
 notify-pvp-disabled: "&7Вы не можете вступить в бой в данный момент, сейчас день!"
+notify-player-immune: "&7Этот игрок защищён от PvP!"
+notify-self-immune: "&7Вы защищены от PvP, не можете вступить в бой"
 
 # Feedback
-feedback-update-available: "&9&lDayNightPvP &8-> &7Доступно обновление!!"
+feedback-update-available: "&9&lDayNightPvP &8-> &7Обновление доступно!!"
 feedback-update-current-version: "&7Текущая версия: &c{0}"
 feedback-update-latest-version: "&7Последняя версия: &b{0}"
-feedback-update-check-failed: "&9&lDayNightPvP &8-> &7Не удалось проверить наличие обновлений."
+feedback-update-check-failed: "&9&lDayNightPvP &8-> &7Не удалось проверить обновления."
 feedback-reload-plugin: "&a&lУспех! &7Плагин перезагружен!"
-feedback-lose-money: "&e&lПредупреждение! &7Вы были убиты &b{0} &7и потеряли &c${1}"
-feedback-win-money: "&e&lПредупреждение! &7Вы убили &b{0} &7и заработали &a${1}"
-feedback-non-existent-command: "&c&lОшибка! &7Эта команда не существует!"
+feedback-lose-money: "&e&lПредупреждение! &7Вы погибли от &b{0} &7и потеряли &c${1}"
+feedback-win-money: "&e&lПредупреждение! &7Вы убили &b{0} &7и выиграли &a${1}"
+feedback-non-existent-command: "&c&lОшибка! &7Команда не найдена!"
 feedback-error: "&c&lОШИБКА!"
 
 # Actions
 action-update-found-click: "&a&nНажмите здесь, чтобы открыть страницу плагина"
 
 # Placeholder
-placeholder-pvp-enabled: "&aВключен"
-placeholder-pvp-disabled: "&cОтключен"
+placeholder-pvp-enabled: "&aВключено"
+placeholder-pvp-disabled: "&cОтключено"

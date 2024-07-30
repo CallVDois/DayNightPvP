@@ -7,7 +7,7 @@
     <groupId>org.callv2</groupId>
     <artifactId>DayNightPvP</artifactId>
     <name>DayNightPvP</name>
-    <version>1.2.6.3</version>
+    <version>1.2.6.4</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

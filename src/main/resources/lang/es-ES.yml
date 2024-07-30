@@ -1,14 +1,16 @@
 # This is the version of the file, DO NOT MODIFY.
-version: 13
+version: 14
 
 # Notifications
-notify-day-chat: "&a&l¡Día! PvP Desactivado!"
-notify-night-chat: "&c&l¡Noche! PvP Activado!"
+notify-day-chat: "&a&l¡Día! ¡PvP Desactivado!"
+notify-night-chat: "&c&l¡Noche! ¡PvP Activado!"
 notify-day-title: "&a&l¡Día!"
 notify-day-subtitle: "&a&lPvP Desactivado!"
 notify-night-title: "&c&l¡Noche!"
 notify-night-subtitle: "&c&lPvP Activado!"
 notify-pvp-disabled: "&7¡No puedes entrar en combate en este momento, es de día!"
+notify-player-immune: "&7¡Este jugador es inmune al PvP!"
+notify-self-immune: "&7Eres inmune al PvP, no puedes entrar en combate"
 
 # Feedback
 feedback-update-available: "&9&lDayNightPvP &8-> &7¡Actualización disponible!!"
@@ -16,9 +18,9 @@ feedback-update-current-version: "&7Versión actual: &c{0}"
 feedback-update-latest-version: "&7Última versión: &b{0}"
 feedback-update-check-failed: "&9&lDayNightPvP &8-> &7No se pudo verificar actualizaciones."
 feedback-reload-plugin: "&a&l¡Éxito! &7¡Plugin recargado!"
-feedback-lose-money: "&e&l¡Aviso! &7Has muerto a manos de &b{0} &7y has perdido &c${1}"
-feedback-win-money: "&e&l¡Aviso! &7Has matado a &b{0} &7y has ganado &a${1}"
-feedback-non-existent-command: "&c&l¡Error! &7¡Este comando no existe!"
+feedback-lose-money: "&e&l¡Aviso! &7Moriste a manos de &b{0} &7y perdiste &c${1}"
+feedback-win-money: "&e&l¡Aviso! &7Mataste a &b{0} &7y ganaste &a${1}"
+feedback-non-existent-command: "&c&l¡Error! &7¡Comando no encontrado!"
 feedback-error: "&c&l¡ERROR!"
 
 # Actions
